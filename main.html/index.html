@@ -1,21 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPA Опросник</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav id="nav">
-    <a href="#/">Главная</a>
-    <a href="#/create">Создать опрос</a>
-    <a href="#/login">Вход</a>
-    <span id="user"></span>
-  </nav>
+<main class="wrap">
+<header class="header">
+<h1>Короткий опрос</h1>
+<p class="lead">Поделитесь мнением — это займёт 1 минуту</p>
+</header>
 
-  <div id="app"></div>
+<section class="card" id="surveyCard">
+<form id="surveyForm">
+<div class="step" data-step="1">
+<label class="q">1. Насколько вам нравится сайт?</label>
+<div class="radios">
+<label><input type="radio" name="like" value="5"> Отлично</label>
+<label><input type="radio" name="like" value="4"> Хорошо</label>
+<label><input type="radio" name="like" value="3"> Нормально</label>
+<label><input type="radio" name="like" value="2"> Плохо</label>
+<label><input type="radio" name="like" value="1"> Ужасно</label>
+</div>
+<div class="error" data-for="like"></div>
+</div>
 
-  <script src="main.js"></script>
+<div class="step" data-step="2">
+<label class="q">2. Что можно улучшить?</label>
+<textarea name="improve" placeholder="Коротко опишите..." rows="4"></textarea>
+</div>
+
+<div class="step" data-step="3">
+<label class="q">3. Хотите оставить e‑mail (необязательно)?</label>
+<input type="email" name="email" placeholder="example@mail.com">
+</div>
+
+<div class="controls">
+<button type="button" id="prevBtn" class="ghost">Назад</button>
+<button type="button" id="nextBtn">Далее</button>
+<button type="submit" id="submitBtn" class="primary hidden">Отправить</button>
+</div>
+</form>
+</section>
+
+<section class="card hidden" id="resultCard">
+<h2>Результаты</h2>
+<canvas id="resultsChart" width="400" height="200"></canvas>
+<div class="result-actions">
+<button id="resetBtn" class="ghost">Сбросить результаты</button>
+<button id="backToSurvey" class="primary">Пройти ещё раз</button>
+</div>
+</section>
+
+<footer class="footer">
+<small>© Твой проект • Сделано просто</small>
+</footer>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
