@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌌 Опросник Flex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul id="mainMenu">
+        <li id="menuProfile">👤 Профиль</li>
+        <li id="menuStats">📊 Статистика</li>
+        <li id="menuCategories">📂 Категории</li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div id="categoriesSection" class="flex-container"></div>
+    <div id="quizSection" class="flex-container" style="display:none;"></div>
+    <div id="resultSection" class="flex-container" style="display:none;"></div>
+    <div id="profileSection" class="flex-container" style="display:none;"></div>
+    <div id="statsSection" class="flex-container" style="display:none;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
